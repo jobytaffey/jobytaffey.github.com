@@ -72,6 +72,12 @@ window.onload = function() {
 		var dead = document.getElementById('controls');
 		dead.parentElement.removeChild(dead);
 	}
+
+    loadRom('pop.gba', function(rom) {
+        gba.setRom(rom);
+        gba.runStable();
+    });
+
 }
 
 function fadeOut(id, nextId, kill) {
