@@ -170,6 +170,9 @@ function togglePause() {
 		if (debug && debug.gbaCon) {
 			debug.gbaCon.run();
 		} else {
+			fadeOut('preload', 'ingame');
+			fadeOut('instructions', null, true);
+
 			gba.runStable();
 		}
 		e.textContent = "PAUSE";
