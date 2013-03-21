@@ -170,9 +170,6 @@ function togglePause() {
 		if (debug && debug.gbaCon) {
 			debug.gbaCon.run();
 		} else {
-			fadeOut('preload', 'ingame');
-			fadeOut('instructions', null, true);
-
 			gba.runStable();
 		}
 		e.textContent = "PAUSE";
@@ -301,7 +298,7 @@ document.addEventListener('webkitfullscreenchange', function() {
 		<button onclick="document.getElementById('saveloader').click()">Upload Savegame</button>
 		<input id="saveloader" type="file" onchange="uploadSavedataPending(this.files[0]);">
 	</div>
-	<div id="ingame" class="hidden">
+	<div id="ingame">
 		<button id="pause" class="bigbutton" onclick="togglePause()">PAUSE</button>
 		<button class="bigbutton" onclick="reset()">RESET</button>
 		<button onclick="gba.downloadSavedata()">Download Savegame</button>
